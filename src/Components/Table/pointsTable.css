@@ -1,0 +1,74 @@
+.player-text {
+  font-size: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+th {
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  width: 43%;
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tg td {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 20px 20px;
+  word-break: normal;
+}
+.tg th {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 20px 20px;
+  word-break: normal;
+}
+.tg .tg-c3ow {
+  border-color: none;
+  text-align: center;
+  font-size: 100%;
+}
+.tg .tg-zd5i {
+  border-color: none;
+  font-size: 100%;
+  text-align: left;
+}
+.tg .tg-0pky {
+  border-color: none;
+  text-align: left;
+  vertical-align: text-top;
+}
+.tg .tg-0lax {
+  text-align: left;
+  font-size: 100%;
+}
+
+img {
+  width: 33%;
+}
+
+.svg-inline--fa {
+  height: 3em;
+  padding-bottom: 5%;
+}
+
+div.table-responsive {
+  float: right;
+  margin-right: 4%;
+  width: fit-content;
+}

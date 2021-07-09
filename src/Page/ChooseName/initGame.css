@@ -1,0 +1,87 @@
+body {
+  background: rgb(208, 214, 60);
+  background: linear-gradient(
+    90deg,
+    rgba(208, 214, 60, 1) 0%,
+    rgba(84, 100, 203, 1) 0%,
+    rgba(200, 116, 116, 1) 100%
+  );
+}
+
+.title {
+  font-size: 100%;
+  color: #f5ad05;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 0px 0px 0 rgb(227, 155, 0), 1px 1px 0 rgb(209, 137, 0),
+    2px 2px 0 rgb(191, 119, 0), 3px 3px 0 rgb(173, 101, 0),
+    4px 4px 0 rgb(156, 84, 0), 5px 5px 0 rgb(138, 66, 0),
+    6px 6px 0 rgb(120, 48, 0), 7px 7px 0 rgb(102, 30, 0),
+    8px 8px 0 rgb(84, 12, 0), 9px 9px 0 rgb(66, -6, 0),
+    10px 10px 0 rgb(48, -24, 0), 11px 11px 10px rgba(0, 255, 162, 0.17),
+    11px 11px 1px rgba(0, 255, 162, 0.5), 0px 0px 10px rgba(0, 255, 162, 0.2);
+  text-align: center;
+  margin-top: 10%;
+}
+
+img {
+  width: 33%;
+  margin-left: 35%;
+}
+
+.game-title {
+  width: auto;
+  text-align: center;
+}
+
+.card-new-player {
+  text-align: center;
+  width: 20%;
+  margin-top: 3%;
+  margin-left: 40%;
+}
+
+.title-player {
+  color: rgb(0, 0, 0);
+  font-size: large;
+  margin-right: 67%;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-play {
+  background: #b36280;
+  background-image: linear-gradient(to bottom, #b36280, #1e62d0);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #4ce307;
+  font-family: Trebuchet MS;
+  font-size: 100%;
+  font-weight: 900;
+  padding: 4%;
+  -webkit-box-shadow: 1px 1px 22px 5px #a4df00;
+  -moz-box-shadow: 1px 1px 22px 5px #a4df00;
+  box-shadow: 1px 1px 22px 5px #a4df00;
+  text-shadow: 1px 1px 20px #ff0c0c;
+  border: solid #a00080 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 50%;
+  margin-top: 10%;
+}
+
+.btn-play:hover {
+  border: solid #76a8f1 1px;
+  background: #8b2e81;
+  background-image: linear-gradient(to bottom, #8b2e81, #3d94f6);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.text-alert {
+  margin-left: 2%;
+}
