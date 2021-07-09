@@ -20,7 +20,7 @@ const PointsTable = ({player}) => {
     <table className="tg">
 <thead>
   <tr>
-    <th colSpan="2" className="tg-c3ow">Player</th>
+    <th colSpan="2" className="tg-c3ow">{player}</th>
   </tr>
 </thead>
 <tbody>

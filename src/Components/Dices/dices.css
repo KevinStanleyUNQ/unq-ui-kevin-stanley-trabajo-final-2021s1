@@ -1,0 +1,28 @@
+.roll-dice {
+
+    margin-left: 35%;
+    margin-top: 40%;
+    grid-column: span;
+
+}
+
+/* .dices {
+    letter-spacing: 27px;
+} */
+
+.dice {
+
+    margin-right: 2%;
+    background-color: transparent;
+    border-color: transparent;
+
+}
+.svg-inline--fa.fa-w-14#icon-dice{
+    width: 40px;
+}
+
+.btn-roll-dices {
+
+    margin-left: 10%;
+    margin-top: 2%;
+}
