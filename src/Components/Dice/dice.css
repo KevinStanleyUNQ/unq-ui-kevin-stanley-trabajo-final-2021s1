@@ -1,16 +1,9 @@
 .dices-container {
     width: 5%;
-    margin-left: 40%;
     margin-top: 25%;
+    display: flex;
 }
 
-.roll-dice {
-
-    margin-left: 35%;
-    margin-top: 40%;
-    grid-column: span;
-
-}
 
 .dice-pick {
 
@@ -19,6 +12,7 @@
     border-color: transparent;
     color: green;
     width: 60px;
+    padding-right: 64%;
 
 }
 
@@ -29,6 +23,7 @@
     border-color: transparent;
     color: red;
     width: 60px;
+    padding-right: 64%;
 
 }
 

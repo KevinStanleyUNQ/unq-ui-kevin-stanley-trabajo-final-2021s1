@@ -10,13 +10,18 @@ const UserProvider = ({ children }) => {
 
   const [heldDice, setHeldDice] = useState([])
 
+  const [saveDices, setSaveDices] = useState([])
+
   const addHeldDices = (valueDice) => {
-    setHeldDice(helDice => heldDice.concat(valueDice))
+    if(heldDice.length < 5){
+      setHeldDice(heldDice => heldDice.concat(valueDice))
+      console.log(heldDice)
+    } 
   }
 
 
 
-  const data = { player, setPlayer, addHeldDices, heldDice};
+  const data = { player, setPlayer, addHeldDices, heldDice, setHeldDice, saveDices, setSaveDices};
 
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };

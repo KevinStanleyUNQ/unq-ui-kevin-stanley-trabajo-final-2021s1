@@ -4,7 +4,8 @@ import UserContext from "../../Context/userContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PointsTable from "../../Components/Table/PointsTable"
 import "../Generala/generala.css"
-import Dices from "../../Components/Dices/Dices"
+import Dices from "../../Components/Dices/Dices";
+import DicesPick from '../../Components/DicesPick/DicesPick';
 
 const Generala = () => {
 
@@ -31,6 +32,10 @@ const Generala = () => {
         <div className="table">
         <PointsTable player={player.player} />
         </div>
+        {/* <div className="dices-pick">
+            <h1 className="text-pick-dice">Dados seleccionados:</h1>
+        <DicesPick />
+        </div> */}
         <Dices />
         </main>
         )

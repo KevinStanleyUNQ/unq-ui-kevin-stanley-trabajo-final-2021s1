@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import UserContext from "../../Context/userContext";
 import "../Dice/dice.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,10 +11,10 @@ import { faDiceFive } from "@fortawesome/free-solid-svg-icons";
 import { faDiceSix } from "@fortawesome/free-solid-svg-icons";
 
 const Dice = (props) => {
-  const { value, index } = props;
-  console.log(index)
+  const { value, dice } = props;
 
-  const { player, setPlayer, addHeldDices, heldDice } = useContext(UserContext)
+  const {addHeldDices, heldDice, setSaveDices, saveDices } = useContext(UserContext)
+
 
   const checkPickState = (dice) => {
 
@@ -41,18 +41,26 @@ const Dice = (props) => {
     }
   };
 
-  const handlePickDice = (value) => {
-    console.log("Agrego el dado: " + value)
-    addHeldDices(value)
+  const handlePickDice = (pickDice) => {
+
+    const div = document.getElementById(pickDice)
+    setSaveDices(saveDices => saveDices.concat(div))
+
+    // addHeldDices(value)
+    console.log(div)
+    console.log(saveDices)
+
   }
 
   return (
-    <div className="roll-dice">
-    <div className="dices"> 
-      <button key={index} className={checkPickState(value)} onClick={() => handlePickDice(value)}>
+      <div 
+        key={dice}
+        id={dice}
+        className={checkPickState(dice)} 
+        onClick={() => handlePickDice(dice)}
+        data-dice={value}
+      >
         <FontAwesomeIcon id="icon-dice" icon={handleChooseIcon(value)} />
-      </button>
-      </div>
       </div>
   );
 };

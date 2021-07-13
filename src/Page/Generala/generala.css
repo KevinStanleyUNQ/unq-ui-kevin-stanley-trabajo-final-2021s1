@@ -5,3 +5,15 @@
 .jugador-activo {
     text-align: center;
 }
+
+.dices-pick{
+    float: left;
+    width: 10%;
+    margin-left: 2%;
+}
+
+h1.text-pick-dice {
+    color: blue;
+    inline-size: max-content;
+    margin-top: 136%;
+}
