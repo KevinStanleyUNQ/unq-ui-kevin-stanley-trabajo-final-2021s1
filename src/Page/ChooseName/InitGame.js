@@ -51,10 +51,10 @@ const InitGame = () => {
   };
 
   return (
-    <main>
+    <main className="main-containter">
       <div className="title">
         <h1 className="game-title">
-          Play to Generala
+         Game
         </h1>
       </div>
       <div className="img-Home">
