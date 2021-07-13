@@ -41,10 +41,18 @@ const Dice = (props) => {
     }
   };
 
+  const verifyDices = (element) => {
+    if(saveDices.includes(element)){
+      const index = saveDices.findIndex(e => e === element)
+       
+    }
+
+  }
+
   const handlePickDice = (pickDice) => {
 
     const div = document.getElementById(pickDice)
-    setSaveDices(saveDices => saveDices.concat(div))
+    verifyDices(div)
 
     // addHeldDices(value)
     console.log(div)
