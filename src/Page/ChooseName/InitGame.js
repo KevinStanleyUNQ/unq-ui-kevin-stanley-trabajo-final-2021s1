@@ -14,7 +14,7 @@ const InitGame = () => {
     nickname: "",
   });
 
-  const { setPlayer } = useContext(UserContext);
+  const { setPlayer, player } = useContext(UserContext);
 
   const [alert, setAlert] = useState(false);
 
@@ -42,7 +42,7 @@ const InitGame = () => {
     if (!isValid) {
       showAlert();
     } else {
-      setPlayer({
+      setPlayer({...player, 
         player: nickName,
         playing: true,
       });

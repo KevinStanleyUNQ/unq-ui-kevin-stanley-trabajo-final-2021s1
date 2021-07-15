@@ -32,10 +32,7 @@ const Generala = () => {
         <div className="table">
         <PointsTable player={player.player} />
         </div>
-        {/* <div className="dices-pick">
-            <h1 className="text-pick-dice">Dados seleccionados:</h1>
         <DicesPick />
-        </div> */}
         <Dices />
         </main>
         )

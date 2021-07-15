@@ -1,34 +1,29 @@
-import React, { useContext, useState } from "react";
-import UserContext from "../../Context/userContext";
-import Dice from "../Dice/Dice";
+import React, { useContext } from "react";
+import DicesContext from "../../Context/dicesContext";
+import DicePick from "../DicePick/DicePick";
+import "../DicesPick/dicesPick.css";
 
 const DicesPick = () => {
-    
-  const [playerPickDice, setPickDice] = useState(false);
-  const { heldDice } = useContext(UserContext);
+  const { saveDices } = useContext(DicesContext);
+
+  const listValuesDicesPick = saveDices.map(item => item.dataset.dice)
 
   const listDicesPick = () => {
-    const orderPickDice = heldDice
-      .sort()
-      .map((pickDice, index) => (
-        <Dice value={pickDice} key={index} dice={index} />
-      ));
-    setPickDice(true);
-    console.log(orderPickDice)
-    return orderPickDice;
+    const pickDices = listValuesDicesPick.map((valueDice, index) => (
+      <DicePick value={valueDice} key={index} dice={index} />
+    ));
+
+    return pickDices;
   };
 
   return (
-//   <div className="dices-pick">
-//       { playerPickDice && (
-//           listDicesPick
-//       )
-//      }
-//       </div>
-        <div className="dices-pick">
-            {listDicesPick}
-        </div>
-    )
+    <div className="all-dices-pick">
+      <div className="all-dices-pick-container">
+        <h4 className="text-dices-pick">Pick Dices:</h4>
+        {listDicesPick()}
+      </div>
+    </div>
+  );
 };
 
 export default DicesPick;

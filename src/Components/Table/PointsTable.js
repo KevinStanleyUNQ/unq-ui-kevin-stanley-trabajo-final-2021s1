@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext, { UserProvider } from "../../Context/userContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiceOne } from "@fortawesome/free-solid-svg-icons";
@@ -13,61 +14,65 @@ import letraG from "../../assets/img/letra-G.ico";
 import letraP from "../../assets/img/letra-P.ico";
 import "../Table/pointsTable.css"
 
-const PointsTable = ({player}) => {
+const PointsTable = () => {
+
+  const { player, ptsTotal} = useContext(UserContext)
+  console.log(player)
+
   return (
     <>
     <div className="table-responsive">
     <table className="tg">
 <thead>
   <tr>
-    <th colSpan="2" className="tg-c3ow">{player}</th>
+    <th colSpan="2" className="tg-c3ow">{player.player}</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td className="tg-zd5i"><FontAwesomeIcon icon={faDiceOne} />
-    15Pts
+    {player.pairOrTrio_1 + " pts"}
     </td>
     <td className="tg-0pky"><img src={letraE} alt="letra-E" />
-    15Pts
+    {player.stair + " pts"}
     </td>
   </tr>
   <tr>
     <td className="tg-0pky"><FontAwesomeIcon icon={faDiceTwo} />
-    15Pts
+    {player.pairOrTrio_2 + " pts"}
     </td>
     <td className="tg-0pky"><img src={letraF} alt="letra-F" />
-    15Pts
+    {player.full + " pts"}
     </td>
   </tr>
   <tr>
     <td className="tg-0pky"><FontAwesomeIcon icon={faDiceThree} />
-    15Pts
+    {player.pairOrTrio_3 + " pts"}
     </td>
     <td className="tg-0pky"><img src={letraP} alt="letra-P" />
-    15Pts
+    {player.poker + " pts"}
     </td>
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceFour} />
-    15Pts
+    {player.pairOrTrio_4 + " pts"}
     </td>
-    <td className="tg-0lax"><img src={letraG} alt="letra-G" />
-    15Pts
-    </td>
+    {/* <td className="tg-0lax"><img src={letraG} alt="letra-G" />
+    {player.pairOrTrio_1 + " pts"}
+    </td> */}
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceFive} />
-    15Pts
+    {player.pairOrTrio_5 + " pts"}
     </td>
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceSix} />
-    15Pts
+    {player.pairOrTrio_6 + " pts"}
     </td>
   </tr>
   <tr>
-    <td className="tg-0lax" colSpan="2">Result:</td>
+    <td className="tg-0lax" colSpan="2">Result: {ptsTotal() + " pts"}</td>
   </tr>
 </tbody>
 </table>

@@ -1,63 +1,38 @@
-import React, { useContext, useState } from 'react'
-import UserContext from "../../Context/userContext";
+import React, { useContext } from 'react'
+import DicesContext from "../../Context/dicesContext";
 import "../Dice/dice.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDice } from "@fortawesome/free-solid-svg-icons";
-import { faDiceOne } from "@fortawesome/free-solid-svg-icons";
-import { faDiceTwo } from "@fortawesome/free-solid-svg-icons";
-import { faDiceThree } from "@fortawesome/free-solid-svg-icons";
-import { faDiceFour } from "@fortawesome/free-solid-svg-icons";
-import { faDiceFive } from "@fortawesome/free-solid-svg-icons";
-import { faDiceSix } from "@fortawesome/free-solid-svg-icons";
+import { handleChooseIcon } from "../../utils/functions";
 
 const Dice = (props) => {
   const { value, dice } = props;
 
-  const {addHeldDices, heldDice, setSaveDices, saveDices } = useContext(UserContext)
-
+  const {setSaveDices, saveDices, setHeldDices, heldDices } = useContext(DicesContext)
 
   const checkPickState = (dice) => {
 
-    const isPickDice = heldDice.includes(dice) ? "dice-pick" : "dice-no-pick";
+    const element = document.getElementById(dice)
+    const isPickDice = saveDices.includes(element) ? "dice-pick" : "dice-no-pick";
     return isPickDice;
-  };
+  }
 
-  const handleChooseIcon = (dice) => {
-    switch (dice) {
-      case 1:
-        return faDiceOne;
-      case 2:
-        return faDiceTwo;
-      case 3:
-        return faDiceThree;
-      case 4:
-        return faDiceFour;
-      case 5:
-        return faDiceFive;
-      case 6:
-        return faDiceSix;
-      default:
-        return faDice;
-    }
-  };
 
-  const verifyDices = (element) => {
+  const pushOrPopDice = (pickDice) => {
+
+    const element = document.getElementById(pickDice)
+    // const valueDice = element.dataset.dice
+
     if(saveDices.includes(element)){
-      const index = saveDices.findIndex(e => e === element)
-       
+      setSaveDices(saveDices.filter(dice => dice !== element))
     }
-
+    else{
+      setSaveDices(saveDices => saveDices.concat(element))
+      // setHeldDices(heldDices => heldDices.concat(valueDice))
+    }
   }
 
   const handlePickDice = (pickDice) => {
-
-    const div = document.getElementById(pickDice)
-    verifyDices(div)
-
-    // addHeldDices(value)
-    console.log(div)
-    console.log(saveDices)
-
+    pushOrPopDice(pickDice)
   }
 
   return (

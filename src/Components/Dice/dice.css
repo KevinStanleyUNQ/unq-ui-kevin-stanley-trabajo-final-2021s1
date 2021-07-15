@@ -1,15 +1,6 @@
-.dices-container {
-    width: 5%;
-    margin-top: 25%;
-    display: flex;
-}
-
-
 .dice-pick {
 
     margin-right: 2%;
-    background-color: transparent;
-    border-color: transparent;
     color: green;
     width: 60px;
     padding-right: 64%;
@@ -19,8 +10,6 @@
 .dice-no-pick {
 
     margin-right: 2%;
-    background-color: transparent;
-    border-color: transparent;
     color: red;
     width: 60px;
     padding-right: 64%;
@@ -29,10 +18,4 @@
 
 .svg-inline--fa.fa-w-14#icon-dice{
     width: 40px;
-}
-
-.btn-roll-dices {
-
-    margin-left: 10%;
-    margin-top: 2%;
 }
