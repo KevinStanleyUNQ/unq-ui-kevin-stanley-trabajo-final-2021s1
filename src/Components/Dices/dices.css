@@ -6,8 +6,9 @@
 
 .roll-dice {
 
-    margin-left: 35%;
-    margin-top: 40%;
+    margin-left: 40%;
+    margin-top: 20%;
+    width: 20%;
 
 }
 
@@ -16,7 +17,7 @@
     margin-right: 2%;
     background-color: transparent;
     border-color: transparent;
-    color: green;
+    color: lime;
     width: 60px;
 
 }
@@ -26,7 +27,7 @@
     margin-right: 2%;
     background-color: transparent;
     border-color: transparent;
-    color: red;
+    color: rgb(0, 26, 255);
     width: 60px;
 
 }
@@ -37,6 +38,7 @@
 
 .btn-roll-dices {
 
-    margin-left: 18%;
+    margin-left: 20%;
     margin-top: 2%;
+    width: 20%;
 }

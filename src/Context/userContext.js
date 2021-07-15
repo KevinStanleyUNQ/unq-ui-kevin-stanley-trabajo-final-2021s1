@@ -15,6 +15,7 @@ const UserProvider = ({ children }) => {
     pairOrTrio_4: 0,
     pairOrTrio_5: 0,
     pairOrTrio_6: 0,
+
   });
 
   const ptsTotal = () => {
@@ -31,7 +32,14 @@ const UserProvider = ({ children }) => {
             )
   }
 
-  const data = { player, setPlayer, ptsTotal};
+
+  const setPoints = (score) => {
+
+
+
+  }
+
+  const data = { player, setPlayer, ptsTotal, setPoints};
 
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };
