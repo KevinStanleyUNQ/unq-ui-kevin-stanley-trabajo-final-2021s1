@@ -20,7 +20,7 @@ const PointsTable = () => {
   console.log(player)
 
   return (
-    <>
+    <div className= "table-container">
     <div className="table-responsive">
     <table className="tg">
 <thead>
@@ -31,44 +31,41 @@ const PointsTable = () => {
 <tbody>
   <tr>
     <td className="tg-zd5i"><FontAwesomeIcon icon={faDiceOne} />
-    {player.pairOrTrio_1 + " pts"}
+    <span className="text-points">{player.pairOrTrio_1 + " pts"}</span>
     </td>
     <td className="tg-0pky"><img src={letraE} alt="letra-E" />
-    {player.stair + " pts"}
+    <span className="text-points">{player.stair + " pts"}</span>
     </td>
   </tr>
   <tr>
     <td className="tg-0pky"><FontAwesomeIcon icon={faDiceTwo} />
-    {player.pairOrTrio_2 + " pts"}
+    <span className="text-points">{player.pairOrTrio_2 + " pts"}</span>
     </td>
     <td className="tg-0pky"><img src={letraF} alt="letra-F" />
-    {player.full + " pts"}
+    <span className="text-points">{player.full + " pts"}</span>
     </td>
   </tr>
   <tr>
     <td className="tg-0pky"><FontAwesomeIcon icon={faDiceThree} />
-    {player.pairOrTrio_3 + " pts"}
+    <span className="text-points">{player.pairOrTrio_3 + " pts"}</span>
     </td>
     <td className="tg-0pky"><img src={letraP} alt="letra-P" />
-    {player.poker + " pts"}
+    <span className="text-points">{player.poker + " pts"}</span>
     </td>
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceFour} />
-    {player.pairOrTrio_4 + " pts"}
+    <span className="text-points">{player.pairOrTrio_4 + " pts"}</span>
     </td>
-    {/* <td className="tg-0lax"><img src={letraG} alt="letra-G" />
-    {player.pairOrTrio_1 + " pts"}
-    </td> */}
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceFive} />
-    {player.pairOrTrio_5 + " pts"}
+    <span className="text-points">{player.pairOrTrio_5 + " pts"}</span>
     </td>
   </tr>
   <tr>
     <td className="tg-0lax"><FontAwesomeIcon icon={faDiceSix} />
-    {player.pairOrTrio_6 + " pts"}
+    <span className="text-points">{player.pairOrTrio_6 + " pts"}</span>
     </td>
   </tr>
   <tr>
@@ -77,7 +74,7 @@ const PointsTable = () => {
 </tbody>
 </table>
       </div>
-    </>
+    </div>
   );
 };
 

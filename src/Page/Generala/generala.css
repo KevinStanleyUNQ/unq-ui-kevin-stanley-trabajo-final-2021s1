@@ -17,3 +17,7 @@ h1.text-pick-dice {
     inline-size: max-content;
     margin-top: 136%;
 }
+
+main.main{
+    width: 100%;
+}

@@ -33,7 +33,29 @@ const UserProvider = ({ children }) => {
   }
 
 
-  const setPoints = (score) => {
+  const setPoints = (numberDice, times) => {
+
+    switch(numberDice){
+
+      case 1:
+          let sumPair_1 = player.pairOrTrio_1 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_1:sumPair_1})
+      case 2:
+          let sumPair_2 = player.pairOrTrio_2 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_2:sumPair_2})
+      case 3:
+          let sumPair_3 = player.pairOrTrio_3 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_3:sumPair_3})
+      case 4:
+          let sumPair_4 = player.pairOrTrio_4 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_4:sumPair_4})
+      case 5:
+          let sumPair_5 = player.pairOrTrio_5 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_5:sumPair_5})
+      default:
+          let sumPair_6 = player.pairOrTrio_6 + (numberDice * times)
+          return setPlayer({...player, pairOrTrio_6:sumPair_6})
+    }
 
 
 

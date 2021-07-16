@@ -25,7 +25,7 @@ const Generala = () => {
     
 
     return (
-        <main>
+        <main className= "main">
         <div className="jugador-activo">
             <h1>Soy el Jugador: {player.player}</h1>
         </div>

@@ -12,3 +12,7 @@ npm i react-router-dom
 * Instale Icon-SVG
 
 npm installa @materia-ui/icons
+
+* Instale Font Awesome
+
+npm i font-awesome

@@ -4,18 +4,27 @@
   width: 100%;
 }
 
+.table-container {
+
+  width: 100%;
+  margin-left: 3%;
+}
+
 th {
   width: 100%;
   text-align: center;
+  color: rgb(1, 248, 236);
 }
 
 td {
   width: 43%;
+  color: rgb(250, 250, 250);
 }
 
 .tg {
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 .tg td {
   border-color: black;
@@ -26,6 +35,7 @@ td {
   overflow: hidden;
   padding: 20px 20px;
   word-break: normal;
+  width: 60%;
 }
 .tg th {
   border-color: black;
@@ -51,7 +61,6 @@ td {
 .tg .tg-0pky {
   border-color: none;
   text-align: left;
-  vertical-align: text-top;
 }
 .tg .tg-0lax {
   text-align: left;
@@ -59,7 +68,8 @@ td {
 }
 
 img {
-  width: 33%;
+  width: 43%;
+  margin-left: 5%;
 }
 
 .svg-inline--fa {
@@ -71,4 +81,15 @@ div.table-responsive {
   float: right;
   margin-right: 4%;
   width: fit-content;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 2.875em;
+}
+
+span.text-points{
+
+  width: 50%;
+  margin-left: 15%;
+  margin-top: 15%;
 }

@@ -13,7 +13,7 @@ const Dices = () => {
     dicesOnTable,
   } = useContext(DicesContext);
 
-  const { setPlayer, player } = useContext(UserContext)
+  const { setPlayer, player, setPoints } = useContext(UserContext);
 
   useEffect(() => {}, [saveDices, dicesOnTable]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -46,109 +46,100 @@ const Dices = () => {
     });
 
     return counterAppearence;
-
   };
 
   const handleRemoveDuplicates = (originalArray, prop) => {
     let newArray = [];
-    let lookupObject  = {};
+    let lookupObject = {};
 
-    for(let i in originalArray) {
-       lookupObject[originalArray[i][prop]] = originalArray[i];
+    for (let i in originalArray) {
+      lookupObject[originalArray[i][prop]] = originalArray[i];
     }
 
-    for(let i in lookupObject) {
-        newArray.push(lookupObject[i]);
+    for (let i in lookupObject) {
+      newArray.push(lookupObject[i]);
     }
-     return newArray;
-}
-
+    return newArray;
+  };
 
   const handleVerifyPlays = (arrayDicesAndAppearences) => {
-    
     let listAppearencesOfDices = arrayDicesAndAppearences.map((e) => e.count);
-    let maxAppearences = Math.max(...listAppearencesOfDices)
+    let maxAppearences = Math.max(...listAppearencesOfDices);
 
-    let dicesWithMoreAppearences = arrayDicesAndAppearences.filter((e) => e.count === maxAppearences)
+    let dicesWithMoreAppearences = arrayDicesAndAppearences.filter(
+      (e) => e.count === maxAppearences
+    );
 
-      
+    let dices = dicesWithMoreAppearences[0];
+    console.log(dicesWithMoreAppearences);
 
-      let dices = dicesWithMoreAppearences[0]
-      console.log(dicesWithMoreAppearences)
-
-        switch (dices.count) {
-          case 1: 
-          console.log(arrayDicesAndAppearences)
-            return stair(dicesWithMoreAppearences)
-          case 2:
-            // pairOrTrio(dices, dicesWithMoreAppearences)
-            console.log(arrayDicesAndAppearences)
-            return console.log("Debo verificar si es Par o Trio o Full")
-          case 3:
-            console.log(arrayDicesAndAppearences)
-            return full(arrayDicesAndAppearences)
-
-          case 4:
-            console.log(arrayDicesAndAppearences)
-            return poker()
-          default: 
-            return console.log("No cumplo con ninguna jugada")
-        }
-  }
-
-  const pairOrTrio = (dices, dicesWithMoreAppearences) => {
-
-    if(dices.length > 1 && dices.length < 5 ){
-      let listNumbers = dicesWithMoreAppearences.map((e) => e.number)
-      let listTimesNumber = dicesWithMoreAppearences.map((e) => e.count)
-      // setPoints()
-
-
+    switch (dices.count) {
+      case 1:
+        return stair(dicesWithMoreAppearences);
+      case 3:
+        return full(arrayDicesAndAppearences);
+      case 4:
+        return poker();
+      default:
+        return pairOrTrioOrNone(dicesWithMoreAppearences);
     }
+  };
 
-  }
+  const pairOrTrioOrNone = (dicesWithMoreAppearences) => {
+    if (dicesWithMoreAppearences.length === 1) {
+      let number = dicesWithMoreAppearences[0].number;
+      let times = dicesWithMoreAppearences[0].count;
+      setPoints(number, times);
+    } else {
+      let number_1 = dicesWithMoreAppearences[0].number;
+      let times_1 = dicesWithMoreAppearences[0].count;
+      setPoints(number_1, times_1);
+      let number_2 = dicesWithMoreAppearences[1].number;
+      let times_2 = dicesWithMoreAppearences[1].count;
+      setPoints(number_2, times_2);
+    }
+  };
 
   const full = (dices) => {
-    if(dices.length === 2){
+    if (dices.length === 2) {
       let firstDice = dices[0].count;
       let secondDice = dices[1].count;
-      if(firstDice === 3 || secondDice === 3){
-        let sumFull = player.full + 30
-        setPlayer({...player, full:sumFull})
+      if (firstDice === 3 || secondDice === 3) {
+        let sumFull = player.full + 30;
+        setPlayer({ ...player, full: sumFull });
       }
-    }  
-  }
+    }
+  };
 
   const poker = () => {
-    let sumPoker = player.poker + 40
-    setPlayer({...player, poker:sumPoker})
-  }
+    let sumPoker = player.poker + 40;
+    setPlayer({ ...player, poker: sumPoker });
+  };
 
   const stair = (dices) => {
+    let possibleStair_1 = [1, 2, 3, 4, 5];
+    let possibleStair_2 = [2, 3, 4, 5, 6];
 
-    let possibleStair_1 = [1,2,3,4,5];
-    let possibleStair_2 = [2,3,4,5,6];
+    let numbersDices = dices.map((e) => e.number);
+    let numerDiceOrdered = numbersDices.sort();
 
-    let numbersDices = dices.map((e) => e.number)
-    let numerDiceOrdered = numbersDices.sort()
-
-    if(isEqualArray(numerDiceOrdered, possibleStair_1) || 
-       isEqualArray(numerDiceOrdered, possibleStair_2))
-    {
-      let sumStair = player.stair + 20
-      setPlayer({...player, stair:sumStair})
+    if (
+      isEqualArray(numerDiceOrdered, possibleStair_1) ||
+      isEqualArray(numerDiceOrdered, possibleStair_2)
+    ) {
+      let sumStair = player.stair + 20;
+      setPlayer({ ...player, stair: sumStair });
     }
-  }
+  };
 
-  const isEqualArray = (array1,array2) => {
+  const isEqualArray = (array1, array2) => {
     let i = array1.length;
-   if (i !== array2.length) return false;
-   while (i--) {
-     if (array1[i] !== array2[i]) return false;
-   }
-   return true;
- };
-
+    if (i !== array2.length) return false;
+    while (i--) {
+      if (array1[i] !== array2[i]) return false;
+    }
+    return true;
+  };
 
   const handleDices = () => {
     const newListDices = dicesOnTable.map((dice, index) => (
