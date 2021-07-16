@@ -16,3 +16,6 @@ npm installa @materia-ui/icons
 * Instale Font Awesome
 
 npm i font-awesome
+
+
+* Este TPF esta incompleto, no funciona los dados que el jugar se guarda, solo se puede tirar dados y sumar puntos segun el juego que forme, no se pueden ver los juegos realizados, mas que una tabla con el valor del dado que saco y cuanto sumó.
